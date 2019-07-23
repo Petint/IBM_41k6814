@@ -1,4 +1,4 @@
-//http://gammon.com.au/Arduino/HardwareSerial9bit.zip.
+//https://github.com/jorticus/Arduino-Serial9b
 //https://github.com/FrankBoesing/FastCRC
 //MEGA2560 & max13487
 
