@@ -77,7 +77,9 @@ void sendAnswer_A();
 void sendAnswer_B();
 void sendAnswer_C();
 
-void (*sendAnswerArray[14])()= { 
+void send_text_line();
+
+void (*sendAnswerArray[15])()= { 
   notSend, 
   sendAnswer_0, 
   sendAnswer_1, 
@@ -91,7 +93,8 @@ void (*sendAnswerArray[14])()= {
   sendAnswer_9, // user simbol 7
   sendAnswer_A, // SELECT CHARACTER SET???
   sendAnswer_B, // text on line 1
-  sendAnswer_C  // text on line 2
+  sendAnswer_C, // text on line 2
+  send_text_line
 };
 
 #define ELEMENTS sizeof(sendAnswerArray) / sizeof(sendAnswerArray[0])
@@ -566,6 +569,74 @@ void sendAnswer_C() {
   Serial9b1.write9b(0x17E);
 }
 
+void send_text_line() {
+  
+  Serial.println("SATL");
+  delayMicroseconds(1500);
+  sendMark(0x1CA);
+
+  delayMicroseconds(3078);
+  
+  //  text on line 2
+  Serial9b1.write9b(0x17A);
+  delayMicroseconds(200);
+  
+  sndbuf_clr();
+  sndbuf_write(0x03);
+  sndbuf_write(0x00);
+  sndbuf_write(0x00);
+  sndbuf_write(0x00);
+  sndbuf_write(0x28);
+  sndbuf_write(0x55);
+  sndbuf_write(0x30);
+  sndbuf_write(0x30);
+  sndbuf_write(0x35);
+  sndbuf_write(0x2E);
+  sndbuf_write(0x34);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0x20);
+  sndbuf_write(0xF6);
+  sndbuf_write(0x11);
+
+  for( int i = 1; i < sendBufferIndex ; i++) {
+    sendData( sendBuffer[i]);
+  }
+
+  Serial9b1.write9b(0x17E);
+}
+
 void sendAnswer_Y() {
   
   uint16_t crc_t = CRC16.x25(sendstr, 47);
@@ -636,7 +707,7 @@ void loop() {
   if (Serial9b1.available ()) {
     loopTime = currentTime;
 
-    while(Serial9b1.available ()) {
+      while(Serial9b1.available ()) {
       uint16_t d = Serial9b1.read ();
       rcv[ind++] = (byte)d;
     }
@@ -697,6 +768,6 @@ void loop() {
   }
   if( sti >= ELEMENTS ) {
     // restart & stop state mashine
-    sti = 0;
+    sti = ELEMENTS-2;
   }
 }
