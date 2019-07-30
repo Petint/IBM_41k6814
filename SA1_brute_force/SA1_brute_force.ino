@@ -787,6 +787,10 @@ bool validate_SA1_response() {
   if(ind == 5 && rcv[0] == 0x25 && rcv[1] == 0x21 && rcv[2] == 0x47 && rcv[3] == 0x62 && rcv[4] == 0x7E) {
     no_error = false;
   } 
+
+  if(ind == 1 && rcv[0] == 0x5A) {
+    no_error = false;
+  }
   
   clrBuff();
 
