@@ -804,16 +804,21 @@ void sendAnswer_1_bf() {
   int value = 0;
 
   while(!success && offset < 10) {
-    sendAnswer_1_bf_data(offset, value);
-    delayMicroseconds(1500);
-    send_eop();
-    
-    await_available();
-
-    success = validate_SA1_response();
-
+    while(!success && value<256) {
+      sendAnswer_1_bf_data(offset, value);
+      delayMicroseconds(1500);
+      send_eop();
+      
+      await_available();
+  
+      delayMicroseconds(1500); // We need to wait a bit for all data to come in
+  
+      success = validate_SA1_response();
+  
+      value++;
+    }
+    value = 0;
     offset++;
-    value = (value+1)%256;
   }
 
   if(success) {
