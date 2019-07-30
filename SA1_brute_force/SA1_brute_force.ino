@@ -728,9 +728,12 @@ void await_available() {
 }
 
 void clear_available_buffer() {
+  Serial.print(">> ");
   while(Serial9b1.available ()) {
-    Serial9b1.read ();
+    Serial.print((byte)Serial9b1.read (), HEX);
+    Serial.print(" ");
   }
+  Serial.println("");
 }
 
 void sendAnswer_1_bf_data(int offset, int val) {
@@ -837,7 +840,6 @@ void setup() {
   sti = 3;
   
 }
-
 
 
 void loop() {
