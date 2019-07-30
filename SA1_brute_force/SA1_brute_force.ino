@@ -722,8 +722,16 @@ void send_eop() {
 }
 
 void await_available() {
-  while(!Serial9b1.available()) {
-    delayMicroseconds(1500);
+  while(true){
+    if(!Serial9b1.available()) {
+      delayMicroseconds(1500);
+    }
+    if(!Serial9b1.available()) {
+      send_eop();
+    }
+    if(Serial9b1.available()) {
+      break;
+    }
   }
 }
 
@@ -818,12 +826,6 @@ void setup() {
   Serial9b1.begin(187500);
 
   Serial.println("--- START ---");
-
-  bool initialised = false;
-
-  send_eop();
-  delayMicroseconds(1500);
-  send_eop();
 
   await_available();
   clear_available_buffer();
