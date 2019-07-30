@@ -77,9 +77,7 @@ void sendAnswer_A();
 void sendAnswer_B();
 void sendAnswer_C();
 
-void send_text_line();
-
-void (*sendAnswerArray[15])()= { 
+void (*sendAnswerArray[14])()= { 
   notSend, 
   sendAnswer_0, 
   sendAnswer_1, 
@@ -93,8 +91,7 @@ void (*sendAnswerArray[15])()= {
   sendAnswer_9, // user simbol 7
   sendAnswer_A, // SELECT CHARACTER SET???
   sendAnswer_B, // text on line 1
-  sendAnswer_C, // text on line 2
-  send_text_line
+  sendAnswer_C // text on line 2
 };
 
 #define ELEMENTS sizeof(sendAnswerArray) / sizeof(sendAnswerArray[0])
@@ -116,22 +113,31 @@ void clrBuff() {
 
 void sendMark(uint16_t data) {
   Serial9b1.write9b(data);
+Serial.print(data, HEX);
+Serial.print(" ");
   delayMicroseconds(191);
   Serial9b1.write9b(data);
+Serial.print(data, HEX);
+Serial.print(" ");
 }
 
 void sendData(uint8_t data) {
   Serial9b1.write(data);
+  Serial.print(data, HEX);
+  Serial.print(" ");
   delayMicroseconds(100);
 }
 
 void sendAnswer_0() {
   sti++;
   Serial.println("SA0");
+  Serial.print(">> ");
 
   delayMicroseconds(200);
 
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   sndbuf_clr();
@@ -141,14 +147,20 @@ void sendAnswer_0() {
     sendData( sendBuffer[i]);
   }
 
-  Serial9b1.write9b(0x17E); 
+  Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" "); 
+  Serial.println("");
 }
 
 void sendAnswer_1() {
   sti++;
   Serial.println("SA1");
+  Serial.print(">> ");
   delayMicroseconds(200);
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   sndbuf_clr();
@@ -162,13 +174,19 @@ void sendAnswer_1() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
+  Serial.println("");
 }
 
 void sendAnswer_1_alt() {
   sti++;
   Serial.println("SA1");
+  Serial.print(">> ");
   delayMicroseconds(200);
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   sndbuf_clr();
@@ -181,14 +199,20 @@ void sendAnswer_1_alt() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
+  Serial.println("");
 }
 
 void sendAnswer_2() {
   sti++;
   Serial.println("SA2");
+  Serial.print(">> ");
   delayMicroseconds(200);
 
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   sndbuf_clr();
@@ -199,6 +223,8 @@ void sendAnswer_2() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
   delayMicroseconds(260);
   
   sendMark(0x1CA);
@@ -207,6 +233,8 @@ void sendAnswer_2() {
 
   // user simbol 0
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   sndbuf_clr();
@@ -227,12 +255,16 @@ void sendAnswer_2() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
+  Serial.println("");
 }
 
 void sendAnswer_3() {
   sti++;
   Serial.println("SA3");
+  Serial.print(">> ");
   delayMicroseconds(1500);
   sendMark(0x1CA);
 
@@ -240,6 +272,8 @@ void sendAnswer_3() {
 
   // user simbol 1
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   sndbuf_clr();
@@ -260,11 +294,15 @@ void sendAnswer_3() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
+  Serial.println("");
 }
 
 void sendAnswer_4() {
   sti++;
   Serial.println("SA4");
+  Serial.print(">> ");
   delayMicroseconds(1500);
   sendMark(0x1CA);
 
@@ -272,6 +310,8 @@ void sendAnswer_4() {
 
   // user simbol 2
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   sndbuf_clr();
@@ -292,11 +332,15 @@ void sendAnswer_4() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
+  Serial.println("");
 }
 
 void sendAnswer_5() {
   sti++;
   Serial.println("SA5");
+  Serial.print(">> ");
   delayMicroseconds(1500);
   sendMark(0x1CA);
 
@@ -304,6 +348,8 @@ void sendAnswer_5() {
   
   // user simbol 3
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   sndbuf_clr();
@@ -324,11 +370,15 @@ void sendAnswer_5() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
+  Serial.println("");
 }
 
 void sendAnswer_6() {
   sti++;
   Serial.println("SA6");
+  Serial.print(">> ");
   delayMicroseconds(1500);
   sendMark(0x1CA);
 
@@ -336,6 +386,8 @@ void sendAnswer_6() {
   
   // user simbol 4
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   sndbuf_clr();
@@ -356,11 +408,15 @@ void sendAnswer_6() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
+  Serial.println("");
 }
 
 void sendAnswer_7() {
   sti++;
   Serial.println("SA7");
+  Serial.print(">> ");
   delayMicroseconds(1500);
   sendMark(0x1CA);
 
@@ -368,6 +424,8 @@ void sendAnswer_7() {
   
   // user simbol 5
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   sndbuf_clr();
@@ -388,11 +446,15 @@ void sendAnswer_7() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
+  Serial.println("");
 }
 
 void sendAnswer_8() {
   sti++;
   Serial.println("SA8");
+  Serial.print(">> ");
   delayMicroseconds(1500);
   sendMark(0x1CA);
 
@@ -400,6 +462,8 @@ void sendAnswer_8() {
 
   // user simbol 6
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   sndbuf_clr();
@@ -420,11 +484,15 @@ void sendAnswer_8() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
+  Serial.println("");
 }
 
 void sendAnswer_9() {
   sti++;
   Serial.println("SA9");
+  Serial.print(">> ");
   delayMicroseconds(1500);
   sendMark(0x1CA);
 
@@ -432,6 +500,8 @@ void sendAnswer_9() {
   
   // user simbol 7
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   sndbuf_clr();
@@ -452,11 +522,15 @@ void sendAnswer_9() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
+  Serial.println("");
 }
 
 void sendAnswer_A() {
   sti++;
   Serial.println("SAA");
+  Serial.print(">> ");
   delayMicroseconds(1500);
   sendMark(0x1CA);
 
@@ -464,6 +538,8 @@ void sendAnswer_A() {
 
   // SELECT CHARACTER SET???
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   sndbuf_clr();
@@ -477,11 +553,15 @@ void sendAnswer_A() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
+  Serial.println("");
 }
 
 void sendAnswer_B() {
   sti++;
   Serial.println("SAB");
+  Serial.print(">> ");
   delayMicroseconds(1500);
   sendMark(0x1CA);
 
@@ -489,6 +569,8 @@ void sendAnswer_B() {
 
   //  text on line 1
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   sndbuf_clr();
@@ -522,11 +604,15 @@ void sendAnswer_B() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
+  Serial.println("");
 }
 
 void sendAnswer_C() {
-  sti++;
+  sti--;
   Serial.println("SAC");
+  Serial.print(">> ");
   delayMicroseconds(1500);
   sendMark(0x1CA);
 
@@ -534,6 +620,8 @@ void sendAnswer_C() {
   
   //  text on line 2
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
   
   sndbuf_clr();
@@ -567,83 +655,21 @@ void sendAnswer_C() {
   }
 
   Serial9b1.write9b(0x17E);
-}
-
-void send_text_line() {
-  
-  Serial.println("SATL");
-  delayMicroseconds(1500);
-  sendMark(0x1CA);
-
-  delayMicroseconds(3078);
-  
-  //  text on line 2
-  Serial9b1.write9b(0x17A);
-  delayMicroseconds(200);
-  
-  sndbuf_clr();
-  sndbuf_write(0x03);
-  sndbuf_write(0x00);
-  sndbuf_write(0x00);
-  sndbuf_write(0x00);
-  sndbuf_write(0x28);
-  sndbuf_write(0x55);
-  sndbuf_write(0x30);
-  sndbuf_write(0x30);
-  sndbuf_write(0x35);
-  sndbuf_write(0x2E);
-  sndbuf_write(0x34);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0x20);
-  sndbuf_write(0xF6);
-  sndbuf_write(0x11);
-
-  for( int i = 1; i < sendBufferIndex ; i++) {
-    sendData( sendBuffer[i]);
-  }
-
-  Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
+  Serial.println("");
 }
 
 void sendAnswer_Y() {
+  Serial.print(">> ");
   
   uint16_t crc_t = CRC16.x25(sendstr, 47);
   sendstr[47] = crc_t;
   sendstr[48] = (crc_t>>8);
   
   Serial9b1.write9b(0x17A);
+Serial.print(0x17A, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
 
   for( int i = 1; i < 49 ; i++) {
@@ -651,10 +677,14 @@ void sendAnswer_Y() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
+  Serial.println("");
 }
 
 void sendAnswer_X() {
   //sti++;
+  Serial.print(">> ");
   delayMicroseconds(1500);
   sendMark(0x1CA);
 
@@ -672,6 +702,8 @@ void sendAnswer_X() {
   sendline[26] = (crc_t>>8);
 
   Serial9b1.write9b(0x125);
+Serial.print(0x125, HEX);
+Serial.print(" ");
   delayMicroseconds(200);
  
   for( int i = 1; i < 27 ; i++) {
@@ -679,12 +711,16 @@ void sendAnswer_X() {
   }
 
   Serial9b1.write9b(0x17E);
+Serial.print(0x17E, HEX);
+Serial.print(" ");
   seq++;
+  Serial.println("");
 }
 
 void loop() {
   currentTime = micros();
   if( s ) {
+    Serial.print(">> ");
     delayMicroseconds(300);
     sendMark(0x180);
     delayMicroseconds(1600);
@@ -694,6 +730,7 @@ void loop() {
     currentTime = micros();
     loopTime = currentTime;
     s = false;
+    Serial.println(">> ");
   }
   /*  
    *  data packet
@@ -707,10 +744,17 @@ void loop() {
   if (Serial9b1.available ()) {
     loopTime = currentTime;
 
+    if(Serial9b1.available ()) {
+      Serial.println("<< ");
       while(Serial9b1.available ()) {
-      uint16_t d = Serial9b1.read ();
-      rcv[ind++] = (byte)d;
+        uint16_t d = Serial9b1.read ();
+        Serial.print(d, HEX);
+        Serial.print(" ");
+        rcv[ind++] = (byte)d;
+      }
+      Serial.println("");
     }
+    
     if( rcv[0] == 0x5A ) {
         delayMicroseconds(200);
         if( cnt > 50 ) {
@@ -768,6 +812,6 @@ void loop() {
   }
   if( sti >= ELEMENTS ) {
     // restart & stop state mashine
-    sti = ELEMENTS-2;
+    sti = 0;
   }
 }
