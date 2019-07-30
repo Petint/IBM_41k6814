@@ -730,7 +730,7 @@ void loop() {
     currentTime = micros();
     loopTime = currentTime;
     s = false;
-    Serial.println(">> ");
+    Serial.println("");
   }
   /*  
    *  data packet
@@ -745,7 +745,7 @@ void loop() {
     loopTime = currentTime;
 
     if(Serial9b1.available ()) {
-      Serial.println("<< ");
+      Serial.print("<< ");
       while(Serial9b1.available ()) {
         uint16_t d = Serial9b1.read ();
         Serial.print(d, HEX);
