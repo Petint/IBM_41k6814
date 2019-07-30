@@ -736,7 +736,7 @@ void await_available() {
 }
 
 void clear_available_buffer() {
-  Serial.print(">> ");
+  Serial.print("<< ");
   while(Serial9b1.available ()) {
     Serial.print((byte)Serial9b1.read (), HEX);
     Serial.print(" ");
