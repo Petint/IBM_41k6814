@@ -5,6 +5,8 @@ https://github.com/homez/arduino_41k6814
 ## I also 'recently' aquired one of these displays, and I'd like to make it do something.
 I'll be compliluing any information I find on the subject, so one migth be able to use this as a reference.
 
+###[Heres another take on this conundrum](https://github.com/gzalo/LCD-M202MD08A)
+
 ### [IBM P/N 41K6814 20x2 VFD POS "Pole" display aka Futaba M202MD08A](https://forum.arduino.cc/t/ibm-p-n-41k6814-20x2-vfd-pos-pole-display-aka-futaba-m202md08a/257190)
 
 <div class="topic-body clearfix"><div role="heading" aria-level="2" class="topic-meta-data"><div class="names trigger-user-card"><span class="first username staff admin moderator"><a href="/u/system" data-user-card="system" class="">system</a><span title="Ez a felhasználó egy moderátor" class="svg-icon-title"><svg class="fa d-icon d-icon-shield-alt svg-icon svg-node" aria-hidden="true"><use xlink:href="#shield-alt"></use></svg></span></span></div><div class="post-infos"><div class="post-info post-date"><a class="widget-link post-date" href="/t/ibm-p-n-41k6814-20x2-vfd-pos-pole-display-aka-futaba-m202md08a/257190" title="Közlés dátuma"><span title="2014. szept. 12., 01:00" data-time="1410476448000" data-format="tiny" class="relative-date">'14. szept.</span></a><a class="post_number">post #1</a></div><div class="read-state read" title="A bejegyzés olvasatlan"><svg class="fa d-icon d-icon-circle svg-icon svg-node" aria-hidden="true"><use xlink:href="#circle"></use></svg></div></div></div><div class="regular contents"><div class="cooked"><p>I bought one of these on ebay quite cheaply, brand new old stock. It seems that there are a lot of them out there.</p>
