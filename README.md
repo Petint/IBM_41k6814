@@ -30,3 +30,27 @@ I'll be compliluing any information I find on the subject, so one migth be able 
 <p>You'll notice that both of these comments, and the PrimeVFD info, refer to it's slowness and complexity.</p>
 <p>So, well, Noritake modules are better. But who cares, i have this giant Futaba and i want to use it.</p></div><div></div><section class="post-menu-area clearfix"></section></div><section class="post-actions">
   </section><div class="post-links-container"></div><div class="topic-map"></div></div>
+
+### Serial specs*:
+
+```
+I have the same project, i have 2 of M202MD08A vfd displays.
+some additional info:
+      * IBM 12bit rs485 protocol named "4680 Store Systems Serial I/O Channel Attachment Information"      // _I suspect this document contains the pinout, speeds and command set._
+      * www.elektroda.pl/rtvforum/download.php?id=329610  // _This link is broken_
+      * http://www.screenkeys.com/downloads/Technical%20Reference%20Manual%20for%20SK-7510.pdf 30      // _This page requires a log-in._
+      * page 11 vfd display address is 24 or 25
+      * 12 bit rs485: 1 start 8 data 1 address and 2 stop bits at 187.5 kbps _(187500 8N2)_ serial packets, and I not found commands for vfd. That will be nice.
+```
+
+### emondaca, _same page still_
+
+```
+2020. june.post #3
+I need to emulate a Pole display and a SureMark printer to communicate with a SurePos700.
+I know the document from IBM "4680 Store System Serial I/O Channel Attachment Information" contains all a I need, but is not online at the present.
+¿Have somebody a old copy on pdf to post o send to me?      _Still looking for it, If I find it I'll upload it for good._
+
+Thanks in advance.
+Cheers
+```
