@@ -5,7 +5,7 @@ https://github.com/homez/arduino_41k6814
 ## I also 'recently' aquired one of these displays, and I'd like to make it do something.
 I'll be compliluing any information I find on the subject, so one migth be able to use this as a reference.
 
-###[Heres another take on this conundrum](https://github.com/gzalo/LCD-M202MD08A)
+### [Heres another take on this conundrum](https://github.com/gzalo/LCD-M202MD08A)
 
 ### [IBM P/N 41K6814 20x2 VFD POS "Pole" display aka Futaba M202MD08A](https://forum.arduino.cc/t/ibm-p-n-41k6814-20x2-vfd-pos-pole-display-aka-futaba-m202md08a/257190)
 
