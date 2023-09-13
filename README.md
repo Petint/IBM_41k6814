@@ -76,20 +76,21 @@ Cheers
 ### [We display information on VFD IBM 41K6814](http://we.easyelectronics.ru/lcd_gfx/vyvodim-informaciyu-na-vfd-ibm-41k6814.html)
 
 On occasion, I received a VFD display from an IBM 41K6814 POS terminal.  
-![](http://we.easyelectronics.ru/uploads/images/00/15/45/2017/04/12/2ace14.jpg)  
+![](/imgs/2ace14.jpg)  
   
 Well, as soon as I got it, I bought it through an ad for 334 rubles.  
   
 2 lines of 20 characters.  
-![top pcb](http://we.easyelectronics.ru/uploads/images/00/15/45/2017/04/12/7b425e.jpg)![bottom pcb](http://we.easyelectronics.ru/uploads/images/00/15/45/2017/04/12/68b6e9.jpg)  
-  
+![top pcb](/imgs/7b425e.jpg)
+![bottom pcb](/imgs/68b6e9.jpg)
+
 The board says M202MD08A FUTABA.  
   
 Search queries yield very little information.  
 Mostly questions on various forums about how to work with it.  
 The Poles have the most information, where they replaced the display controller with their own.  
   
-![](http://we.easyelectronics.ru/uploads/images/00/15/45/2017/04/12/3224d7.jpg)  
+![](/imgs/3224d7.jpg)  
 RS485 connection interface.  
 1 - +12v  
 2 - A  
@@ -106,7 +107,7 @@ Even though the documentation says:
 I got a stable reception only with one stop bit.  
   
 If you simply apply power, the display will show “U001” in the second line.  
-![U001](http://we.easyelectronics.ru/uploads/images/00/15/45/2017/04/12/3d538c.jpg)  
+![U001](/imgs/3d538c.jpg)  
   
 All the data below was obtained from the working system by taking a dump of information running in RS485.  
   
@@ -124,11 +125,11 @@ here is a dump of the exchange during initialization:
 
   
 After it, U007 is displayed on the display,  
-![](http://we.easyelectronics.ru/uploads/images/00/15/45/2017/04/13/ceb7e2.jpg)  
+![](/imgs/ceb7e2.jpg)  
   
 or whatever you send to it...  
   
-![](http://we.easyelectronics.ru/uploads/images/00/15/45/2017/04/12/b1ae7a.jpg)  
+![](/imgs/b1ae7a.jpg)  
   
 Its Russian encoding is peculiar.  
 From 0x80 to 0xAF there is “ABVG... mnop”, and the continuation from 0xE0 to 0xF1 is “rust... eyuyaYo”.  
