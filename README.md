@@ -51,7 +51,6 @@ So, well, Noritake modules are better. But who cares, i have this giant Futaba a
 
 ### Serial specs*:
 
-```
 I have the same project, i have 2 of M202MD08A vfd displays.
 some additional info:
       * IBM 12bit rs485 protocol named "4680 Store Systems Serial I/O Channel Attachment Information"      // _I suspect this document contains the pinout, speeds and command set._
@@ -59,7 +58,6 @@ some additional info:
       * http://www.screenkeys.com/downloads/Technical%20Reference%20Manual%20for%20SK-7510.pdf 30      // _This page requires a log-in._
       * page 11 vfd display address is 24 or 25
       * 12 bit rs485: 1 start 8 data 1 address and 2 stop bits at 187.5 kbps _(187500 8N2)_ serial packets, and I not found commands for vfd. That will be nice.
-```
 
 ### emondaca, _same page still_
 
