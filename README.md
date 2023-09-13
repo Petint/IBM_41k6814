@@ -56,3 +56,7 @@ I know the document from IBM "4680 Store System Serial I/O Channel Attachment In
 Thanks in advance.
 Cheers
 ```
+
+### [We display information on VFD IBM 41K6814](http://we.easyelectronics.ru/lcd_gfx/vyvodim-informaciyu-na-vfd-ibm-41k6814.html)
+
+On occasion, I received a VFD display from an IBM 41K6814 POS terminal.
