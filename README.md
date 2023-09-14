@@ -7,9 +7,8 @@ I'll be compliluing any information I find on the subject, so one migth be able 
 
 ## Project goals
 
-* Connect the display to a computer, using a USB to RS-485 converter
-* Display symbols on device
-* Display computer stats (CPU%, GPU%, RAM%, etc.)
+* Connect the display to a Raspberry pi running volumio, using a USB to RS-485 converter
+* Display Blayback status (Track name - Album \n Artist - TE/TR)
 
 ### [Heres another take at this problenm](https://github.com/gzalo/LCD-M202MD08A)
 
