@@ -10,8 +10,8 @@ I'll be compliluing any information I find on the subject, so one migth be able 
 * Connect the display to a Raspberry pi running volumio, using a USB to RS-485 converter
 * Display Blayback status (Track name - Album \n Artist - TE/TR)
 
-### [Heres another take at this problenm](https://github.com/gzalo/LCD-M202MD08A)
-## [This one](https://github.com/boricha/M202MD08A) Even has a datasheet!
+### [Heres another take at this problenm](https://github.com/gzalo/LCD-M202MD08A) Altough its a little destcuctive.
+## [This one](https://github.com/boricha/M202MD08A) This one is even more destructuve, and you need to run a couple wires.
 
 ### [IBM P/N 41K6814 20x2 VFD POS "Pole" display aka Futaba M202MD08A](https://forum.arduino.cc/t/ibm-p-n-41k6814-20x2-vfd-pos-pole-display-aka-futaba-m202md08a/257190)
 
