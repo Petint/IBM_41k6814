@@ -3,7 +3,7 @@
 
 ## I also 'recently' aquired one of these displays, and I'd like to make it do something.
 
-I'll be compliluing any information I find on the subject, so one migth be able to use this as a reference.
+I'll be compiling any information I find on the subject, so one migth be able to use this as a reference.
 
 ## Project goals
 
